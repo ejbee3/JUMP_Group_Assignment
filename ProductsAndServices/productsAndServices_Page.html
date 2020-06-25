@@ -67,12 +67,13 @@
             <a class="nav-link" href="../Customers.html">Customer</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0" id="search-form">
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
+            id="search-term"
           />
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
             Search
@@ -172,9 +173,18 @@
         </div>
       </section>
       <div>
-        <svg class="bi bi-cart" width="50px" height="50px" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-          
+        <svg
+          class="bi bi-cart"
+          width="50px"
+          height="50px"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+          />
         </svg>
         <h4>Cart:</h4>
         <ul id="cart-list"></ul>
@@ -190,6 +200,9 @@
 
       let cart = []
       let priceTotal = 0
+      const productsEls = document.querySelectorAll('.card-title')
+      const searchForm = document.getElementById('search-form')
+      let searchTerm = document.getElementById('search-term')
 
       product1Button.addEventListener('click', handleBtn1Click)
       product2Button.addEventListener('click', handleBtn2Click)
@@ -198,10 +211,9 @@
       product5Button.addEventListener('click', handleBtn5Click)
       searchForm.addEventListener('submit', (e) => {
         e.preventDefault()
-        const currentInput = searchTerm.value
+        const currentInput = searchTerm.value.toLowerCase()
         for (let product of productsEls) {
-          if (!product.innerHTML.includes(currentInput)) {
-            console.log(product)
+          if (!product.innerHTML.toLowerCase().includes(currentInput)) {
             product.parentElement.parentElement.style.display = 'none'
           }
         }
