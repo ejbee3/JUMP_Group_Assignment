@@ -17,13 +17,25 @@
       }
 
       .cart-image {
-        height: 7rem;
+        height: 6rem;
         width: 6rem;
         margin: 0.5rem;
       }
 
       h4 {
-        margin-left: 10%;
+        text-align: center;
+        margin: 0.5rem;
+      }
+
+      .cart-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      section > svg,
+      h4 {
+        margin: 0.5rem;
       }
     </style>
   </head>
@@ -84,109 +96,119 @@
     <main>
       <section id="">
         <h4>List of Products:</h4>
-        <div class="card" style="width: 18rem;">
-          <img
-            src="../image/Item1.webp"
-            class="card-img-top"
-            alt="..."
-            id="img1"
-          />
-          <div class="card-body">
-            <h5 class="card-title" id="name1">
-              WI-1000XM2 Wireless Noise-canceling In-ear Headphones
-            </h5>
-            <p class="card-text" id="desc1">
-              Buy This! Price:
-              <span class="price ml-2" id="price1">$299.99</span>
-            </p>
-            <a href="#" class="btn btn-primary" id="btn1">Add To Cart</a>
+        <div class="container">
+          <div class="row">
+            <div class="card col" style="width: 25rem;">
+              <img
+                src="../image/Item1.webp"
+                class="card-img-top"
+                alt="..."
+                id="img1"
+              />
+              <div class="card-body">
+                <h5 class="card-title" id="name1">
+                  WI-1000XM2 Wireless Noise-canceling In-ear Headphones
+                </h5>
+                <p class="card-text" id="desc1">
+                  Buy This! Price:
+                  <span class="price ml-2" id="price1">$299.99</span>
+                </p>
+                <a href="#" class="btn btn-primary" id="btn1">Add To Cart</a>
+              </div>
+            </div>
+            <div class="card col" style="width: 18rem;">
+              <img
+                src="../image/Item2.jpg"
+                class="card-img-top"
+                alt="..."
+                id="img2"
+              />
+              <div class="card-body">
+                <h5 class="card-title" id="name2">Sennheiser HD 450BT</h5>
+                <p class="card-text" id="desc2">
+                  Buy This! Price:
+                  <span class="price ml-2" id="price2">$149.95</span>
+                </p>
+                <a href="#" class="btn btn-primary" id="btn2">Add To Cart</a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img
-            src="../image/Item2.jpg"
-            class="card-img-top"
-            alt="..."
-            id="img2"
-          />
-          <div class="card-body">
-            <h5 class="card-title" id="name2">Sennheiser HD 450BT</h5>
-            <p class="card-text" id="desc2">
-              Buy This! Price:
-              <span class="price ml-2" id="price2">$149.95</span>
-            </p>
-            <a href="#" class="btn btn-primary" id="btn2">Add To Cart</a>
+          <div class="row">
+            <div class="card col" style="width: 18rem;">
+              <img
+                src="../image/Item3.jpg"
+                class="card-img-top"
+                alt="..."
+                id="img3"
+              />
+              <div class="card-body">
+                <h5 class="card-title" id="name3">
+                  Active Noise Cancelling Headphones, Boltune Bluetooth 5.0 Over
+                  Ear Wireless Headphones
+                </h5>
+                <p class="card-text" id="desc3">
+                  Buy This! Price:
+                  <span class="price ml-2" id="price3">$41.59</span>
+                </p>
+                <a href="#" class="btn btn-primary" id="btn3">Add To Cart</a>
+              </div>
+            </div>
+            <div class="card col" style="width: 18rem;">
+              <img
+                src="../image/Item4.jpg"
+                class="card-img-top"
+                alt="..."
+                id="img4"
+              />
+              <div class="card-body">
+                <h5 class="card-title" id="name4">
+                  Beats by Dr. Dre - Beats Studio³
+                </h5>
+                <p class="card-text" id="desc4">
+                  Buy This! Price:
+                  <span class="price ml-2" id="price4">$349.99</span>
+                </p>
+                <a href="#" class="btn btn-primary" id="btn4">Add To Cart</a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img
-            src="../image/Item3.jpg"
-            class="card-img-top"
-            alt="..."
-            id="img3"
-          />
-          <div class="card-body">
-            <h5 class="card-title" id="name3">
-              Active Noise Cancelling Headphones, Boltune Bluetooth 5.0 Over Ear
-              Wireless Headphones
-            </h5>
-            <p class="card-text" id="desc3">
-              Buy This! Price:
-              <span class="price ml-2" id="price3">$41.59</span>
-            </p>
-            <a href="#" class="btn btn-primary" id="btn3">Add To Cart</a>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img
-            src="../image/Item4.jpg"
-            class="card-img-top"
-            alt="..."
-            id="img4"
-          />
-          <div class="card-body">
-            <h5 class="card-title" id="name4">
-              Beats by Dr. Dre - Beats Studio³
-            </h5>
-            <p class="card-text" id="desc4">
-              Buy This! Price:
-              <span class="price ml-2" id="price4">$349.99</span>
-            </p>
-            <a href="#" class="btn btn-primary" id="btn4">Add To Cart</a>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img
-            src="../image/Item6.png"
-            class="card-img-top"
-            alt="..."
-            id="img5"
-          />
-          <div class="card-body">
-            <h5 class="card-title" id="name5">Audeze Mobius Headphones</h5>
-            <p class="card-text" id="desc5">
-              Buy This! Price:
-              <span class="price ml-2" id="price5">$399.99</span>
-            </p>
-            <a href="#" class="btn btn-primary" id="btn5">Add To Cart</a>
+          <div class="row">
+            <div class="card" style="width: 18rem;">
+              <img
+                src="../image/Item6.png"
+                class="card-img-top"
+                alt="..."
+                id="img5"
+              />
+              <div class="card-body">
+                <h5 class="card-title" id="name5">Audeze Mobius Headphones</h5>
+                <p class="card-text" id="desc5">
+                  Buy This! Price:
+                  <span class="price ml-2" id="price5">$399.99</span>
+                </p>
+                <a href="#" class="btn btn-primary" id="btn5">Add To Cart</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <div>
-        <svg
-          class="bi bi-cart"
-          width="50px"
-          height="50px"
-          viewBox="0 0 16 16"
-          fill="currentColor"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
-          />
-        </svg>
-        <h4>Cart:</h4>
+        <section class="cart-title">
+          <svg
+            class="bi bi-cart"
+            width="50px"
+            height="50px"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+            />
+          </svg>
+          <h4>Cart:</h4>
+        </section>
         <ul id="cart-list"></ul>
         <h5 id="price-total"></h5>
       </div>
