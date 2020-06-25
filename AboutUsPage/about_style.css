@@ -125,6 +125,14 @@
     filter: alpha(opacity=100);
 }
 
+.hovereffect:hover .overlay .headphones {
+    color: gold;
+}
+
+.hovereffect:hover .overlay .headphones-dre {
+    color: red;
+}
+
 /* This is another hovering effect to make the default text disappear */
 .container-all-image .permanent-overlay {
     position: absolute;
