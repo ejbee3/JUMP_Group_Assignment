@@ -119,3 +119,10 @@
     opacity: 1;
     color: white;
 }
+
+/* -------------------------------------------- */
+.product-detail {
+    background-color: blue;
+    color: white;
+    padding: 50px;
+}
