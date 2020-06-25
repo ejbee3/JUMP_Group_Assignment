@@ -68,16 +68,21 @@
             padding: 7px 14px;
         }
 
-        .hovereffect a.info:hover {
-            box-shadow: 0 0 5px #fff;
-        }
 
-        .hovereffect:hover img {
+        /* --------------------------------- */
+        /* .hovereffect a.info:hover {
+            box-shadow: 0 0 5px #fff;
+        } */
+
+        /* .hovereffect:hover img {
             -ms-transform: scale(1.2);
             -webkit-transform: scale(1.2);
             transform: scale(1.2);
-        }
+        } */
+        /* --------------------------------- */
 
+
+        /* This will do the hover effect for the image */
         .hovereffect:hover .overlay {
             opacity: 1;
             filter: alpha(opacity=100);
@@ -95,6 +100,21 @@
         .hovereffect:hover a.info {
             -webkit-transition-delay: .2s;
             transition-delay: .2s;
+        }
+
+        /* ------------------------------------------------------------------ */
+
+        .container {
+            margin-top: 10%;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:before {
+            position: absolute;
         }
     </style>
 </head>
@@ -149,6 +169,20 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="./image/react.png" alt="react">
+                    <div class="card-text">
+                        <h3>React</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
