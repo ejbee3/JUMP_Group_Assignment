@@ -213,6 +213,27 @@
         <h5 id="price-total"></h5>
       </div>
     </main>
+    <footer class="page-footer font-small blue pt-4">
+
+      <div class="container-fluid text-center text-md-left">
+
+          <div class="row">
+
+              <div class="col-md-6 mt-md-0 mt-3">
+
+                  <h5 class="text-uppercase"></h5>
+                  <a href="#">
+                      <img src="../image/image.png" width="80px" style="margin-top:0px;" alt="Logo">
+                  </a>
+
+
+              </div>
+
+              <div class="footer-copyright text-center py-3">© 2020 Coorperation:
+                  <a href="https://mdbootstrap.com/"> TeamProject.com</a>
+              </div>
+
+  </footer>
     <script>
       const searchForm = document.getElementById('search-form')
       const searchTerm = document.getElementById('search-term')
@@ -335,7 +356,7 @@
         remove.innerHTML = 'Remove'
         remove.addEventListener('click', () => {
           cartList.removeChild(li)
-          priceTotal -= parseFloat(user.price.slice(1))
+          priceTotal -= parseFloat(user.price.slice(1)).toFixed(2)
           document.getElementById(
             'price-total'
           ).textContent = `Total Price: ${'$'.concat(priceTotal.toString())}`
