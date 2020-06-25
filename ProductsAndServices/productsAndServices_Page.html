@@ -95,7 +95,8 @@
               WI-1000XM2 Wireless Noise-canceling In-ear Headphones
             </h5>
             <p class="card-text" id="desc1">
-              Buy This!<span class="price ml-2" id="price1">$299.99</span>
+              Buy This! Price:
+              <span class="price ml-2" id="price1">$299.99</span>
             </p>
             <a href="#" class="btn btn-primary" id="btn1">Add To Cart</a>
           </div>
@@ -110,7 +111,8 @@
           <div class="card-body">
             <h5 class="card-title" id="name2">Sennheiser HD 450BT</h5>
             <p class="card-text" id="desc2">
-              Buy This!<span class="price ml-2" id="price2">$149.95</span>
+              Buy This! Price:
+              <span class="price ml-2" id="price2">$149.95</span>
             </p>
             <a href="#" class="btn btn-primary" id="btn2">Add To Cart</a>
           </div>
@@ -128,7 +130,8 @@
               Wireless Headphones
             </h5>
             <p class="card-text" id="desc3">
-              Buy This!<span class="price ml-2" id="price3">41.59$</span>
+              Buy This! Price:
+              <span class="price ml-2" id="price3">$41.59</span>
             </p>
             <a href="#" class="btn btn-primary" id="btn3">Add To Cart</a>
           </div>
@@ -145,7 +148,8 @@
               Beats by Dr. Dre - Beats Studio³
             </h5>
             <p class="card-text" id="desc4">
-              Buy This!<span class="price ml-2" id="price4">349.99$</span>
+              Buy This! Price:
+              <span class="price ml-2" id="price4">$349.99</span>
             </p>
             <a href="#" class="btn btn-primary" id="btn4">Add To Cart</a>
           </div>
@@ -160,7 +164,8 @@
           <div class="card-body">
             <h5 class="card-title" id="name5">Audeze Mobius Headphones</h5>
             <p class="card-text" id="desc5">
-              Buy This!<span class="price ml-2" id="price5">$399.99</span>
+              Buy This! Price:
+              <span class="price ml-2" id="price5">$399.99</span>
             </p>
             <a href="#" class="btn btn-primary" id="btn5">Add To Cart</a>
           </div>
@@ -169,7 +174,7 @@
       <div>
         <h4>Cart:</h4>
         <ul id="cart-list"></ul>
-        <p id="price-total"></p>
+        <h5 id="price-total"></h5>
       </div>
     </main>
     <script>
@@ -187,6 +192,16 @@
       product3Button.addEventListener('click', handleBtn3Click)
       product4Button.addEventListener('click', handleBtn4Click)
       product5Button.addEventListener('click', handleBtn5Click)
+      searchForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const currentInput = searchTerm.value
+        for (let product of productsEls) {
+          if (!product.innerHTML.includes(currentInput)) {
+            console.log(product)
+            product.parentElement.parentElement.style.display = 'none'
+          }
+        }
+      })
 
       function handleBtn1Click(e) {
         let product = {
@@ -276,14 +291,13 @@
 
       function getTotalPrice(product) {
         let priceOfItem = product.price.slice(1)
-        parseFloat(priceOfItem)
-        priceTotal += priceOfItem
+        let numPrice = parseFloat(priceOfItem)
+        console.log(typeof numPrice)
+        priceTotal += numPrice
         console.log(priceTotal)
         document.getElementById(
           'price-total'
-        ).textContent = `Total Price: ${'$'.concat(
-          priceTotal.toString().slice(1)
-        )}`
+        ).textContent = `Total Price: ${'$'.concat(priceTotal.toString())}`
       }
     </script>
   </body>
