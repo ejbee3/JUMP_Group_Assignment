@@ -15,6 +15,12 @@
         display: flex;
         flex-direction: row;
       }
+
+      .cart-image {
+        height: 7rem;
+        width: 6rem;
+        margin: 0.5rem;
+      }
     </style>
   </head>
   <body>
@@ -38,7 +44,12 @@
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="../image/Item2.jpg" class="card-img-top" alt="..." />
+          <img
+            src="../image/Item2.jpg"
+            class="card-img-top"
+            alt="..."
+            id="img2"
+          />
           <div class="card-body">
             <h5 class="card-title" id="name2">Sennheiser HD 450BT</h5>
             <p class="card-text" id="desc2">
@@ -48,7 +59,12 @@
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="../image/Item3.jpg" class="card-img-top" alt="..." />
+          <img
+            src="../image/Item3.jpg"
+            class="card-img-top"
+            alt="..."
+            id="img3"
+          />
           <div class="card-body">
             <h5 class="card-title" id="name3">
               Active Noise Cancelling Headphones, Boltune Bluetooth 5.0 Over Ear
@@ -61,7 +77,12 @@
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="../image/Item4.jpg" class="card-img-top" alt="..." />
+          <img
+            src="../image/Item4.jpg"
+            class="card-img-top"
+            alt="..."
+            id="img4"
+          />
           <div class="card-body">
             <h5 class="card-title" id="name4">
               Beats by Dr. Dre - Beats Studio³
@@ -73,7 +94,12 @@
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="../image/Item6.png" class="card-img-top" alt="..." />
+          <img
+            src="../image/Item6.png"
+            class="card-img-top"
+            alt="..."
+            id="img5"
+          />
           <div class="card-body">
             <h5 class="card-title" id="name5">Audeze Mobius Headphones</h5>
             <p class="card-text" id="desc5">
@@ -84,7 +110,7 @@
         </div>
       </section>
       <div>
-        Cart:
+        <h4>Cart:</h4>
         <ul id="cart-list"></ul>
       </div>
     </main>
@@ -98,10 +124,10 @@
       let cart = []
 
       product1Button.addEventListener('click', handleBtn1Click)
-      // product2Button.addEventListener('click', handleBtn2Click)
-      // product3Button.addEventListener('click', handleBtn3Click)
-      // product4Button.addEventListener('click', handleBtn4Click)
-      // product5Button.addEventListener('click', handleBtn5Click)
+      product2Button.addEventListener('click', handleBtn2Click)
+      product3Button.addEventListener('click', handleBtn3Click)
+      product4Button.addEventListener('click', handleBtn4Click)
+      product5Button.addEventListener('click', handleBtn5Click)
 
       function handleBtn1Click(e) {
         let product = {
@@ -110,7 +136,62 @@
           description: document.getElementById('desc1').textContent,
           price: document.getElementById('price1').textContent,
           image: document.getElementById('img1').src,
-          isInCart: false,
+        }
+        cart.push(product)
+
+        console.warn('added', { cart })
+        writeCartItem(product)
+      }
+
+      function handleBtn2Click(e) {
+        let product = {
+          id: Date.now(),
+          name: document.getElementById('name2').textContent,
+          description: document.getElementById('desc2').textContent,
+          price: document.getElementById('price2').textContent,
+          image: document.getElementById('img2').src,
+        }
+        cart.push(product)
+
+        console.warn('added', { cart })
+        writeCartItem(product)
+      }
+
+      function handleBtn3Click(e) {
+        let product = {
+          id: Date.now(),
+          name: document.getElementById('name3').textContent,
+          description: document.getElementById('desc3').textContent,
+          price: document.getElementById('price3').textContent,
+          image: document.getElementById('img3').src,
+        }
+        cart.push(product)
+
+        console.warn('added', { cart })
+        writeCartItem(product)
+      }
+
+      function handleBtn4Click(e) {
+        let product = {
+          id: Date.now(),
+          name: document.getElementById('name4').textContent,
+          description: document.getElementById('desc4').textContent,
+          price: document.getElementById('price4').textContent,
+          image: document.getElementById('img4').src,
+        }
+        cart.push(product)
+
+        console.warn('added', { cart })
+        writeCartItem(product)
+      }
+
+      function handleBtn5Click(e) {
+        let product = {
+          id: Date.now(),
+          name: document.getElementById('name5').textContent,
+          description: document.getElementById('desc5').textContent,
+          price: document.getElementById('price5').textContent,
+          image: document.getElementById('img5').src,
         }
         cart.push(product)
 
@@ -121,7 +202,7 @@
       function writeCartItem(user) {
         let cartList = document.getElementById('cart-list')
         let li = document.createElement('li')
-        li.textContent = `Product: ${user.name}, Description: ${user.description}, Price: ${user.price}`
+        li.innerHTML = `<h6>Product: ${user.name}</h6><p>Description: ${user.description}</p><img src=${user.image} class="cart-image" /><p>Price: ${user.price}</p>`
         cartList.appendChild(li)
       }
     </script>
