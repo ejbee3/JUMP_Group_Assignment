@@ -18,6 +18,7 @@
     </style>
   </head>
   <body>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="../image/image.png" alt="Logo" />
@@ -180,15 +181,90 @@
           isAddedToCart: false
         }
         cart.push(product)
+=======
+    <main>
+      <section>
+        <div class="card" style="width: 18rem;">
+          <img src="../image/Item1.webp" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" id="name1">Card title</h5>
+            <p class="card-text" id="desc1">
+              Buy This!<span class="price ml-2" id="price1">5$</span>
+            </p>
+            <a href="#" class="btn btn-primary" id="btn1">Add To Cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="../image/Item2.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" id="name2">Card title</h5>
+            <p class="card-text" id="desc2">
+              Buy This!<span class="price ml-2" id="price2">5$</span>
+            </p>
+            <a href="#" class="btn btn-primary" id="btn2">Add To Cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="../image/Item3.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" id="name3">Card title</h5>
+            <p class="card-text" id="desc3">
+              Buy This!<span class="price ml-2" id="price3">5$</span>
+            </p>
+            <a href="#" class="btn btn-primary" id="btn3">Add To Cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="../image/Item4.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" id="name4">Card title</h5>
+            <p class="card-text" id="desc4">
+              Buy This!<span class="price ml-2" id="price4">5$</span>
+            </p>
+            <a href="#" class="btn btn-primary" id="btn4">Add To Cart</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="../image/Item6.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title" id="name5">Card title</h5>
+            <p class="card-text" id="desc5">
+              Buy This!<span class="price ml-2" id="price5">5$</span>
+            </p>
+            <a href="#" class="btn btn-primary" id="btn5">Add To Cart</a>
+          </div>
+        </div>
+      </section>
+      <div>Cart</div>
+    </main>
+    <script>
+      const product1Button = document.getElementById('btn1')
+      const product2Button = document.getElementById('btn2')
+      const product3Button = document.getElementById('btn3')
+      const product4Button = document.getElementById('btn4')
+      const product5Button = document.getElementById('btn5')
+>>>>>>> 3c7f3308ea1c1b0bcf4da376a76f98b9dc3dd357
 
-        console.warn('added', { cart })
+      let cart = []
 
-        writeProduct(product)
-      }
+      product1Button.addEventListener('click', handleBtn1Click)
+      product2Button.addEventListener('click', handleBtn2Click)
+      product3Button.addEventListener('click', handleBtn3Click)
+      product4Button.addEventListener('click', handleBtn4Click)
+      product5Button.addEventListener('click', handleBtn5Click)
 
+<<<<<<< HEAD
       function writeProduct (user) {
         let cartList = document.getElementById('cart-list')
         let li = document.createElement('li')
+=======
+      function handleBtn1Click(e) {
+        const product = {
+          name: document.getElementById('name1').textContent,
+          description: document.getElementById('desc1').textContent,
+          isInCart: false,
+        }
+>>>>>>> 3c7f3308ea1c1b0bcf4da376a76f98b9dc3dd357
       }
     </script>
   </body>
