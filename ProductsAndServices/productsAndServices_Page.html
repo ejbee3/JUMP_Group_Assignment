@@ -21,11 +21,68 @@
         width: 6rem;
         margin: 0.5rem;
       }
+
+      h4 {
+        margin-left: 10%;
+      }
     </style>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="../image/image.png" alt="Logo" height="100px" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <!-- Feel Free to change  -->
+          <!-- Landing -->
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <!-- About Us -->
+          <li class="nav-item">
+            <a class="nav-link" href="../AboutUsPage/About_Us.html">About Us</a>
+          </li>
+          <!-- Products & Sevices -->
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="./ProductsAndServices/productsAndServices_Page.html"
+              >Products</a
+            >
+          </li>
+          <!-- Customer Pages -->
+          <li class="nav-item">
+            <a class="nav-link" href="../Customers.html">Customer</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
     <main>
       <section>
+        <h4>List of Products:</h4>
         <div class="card" style="width: 18rem;">
           <img
             src="../image/Item1.webp"
@@ -194,6 +251,9 @@
           image: document.getElementById('img5').src,
         }
         cart.push(product)
+        let priceOfItem = product.price.slice(1)
+        parseFloat(priceOfItem)
+        console.log(priceOfItem)
 
         console.warn('added', { cart })
         writeCartItem(product)
@@ -204,7 +264,13 @@
         let li = document.createElement('li')
         li.innerHTML = `<h6>Product: ${user.name}</h6><p>Description: ${user.description}</p><img src=${user.image} class="cart-image" /><p>Price: ${user.price}</p>`
         cartList.appendChild(li)
+        let remove = document.createElement('button')
+        remove.innerHTML = 'Remove'
+        remove.addEventListener('click', () => cartList.removeChild(li))
+        li.append(remove)
       }
+
+      // function getTotalPrice(price)
     </script>
   </body>
 </html>
