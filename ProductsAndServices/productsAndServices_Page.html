@@ -221,6 +221,13 @@
           }
         }
       })
+      searchTerm.addEventListener('click',()=>{
+        searchTerm.value="";
+        const productEls = document.querySelectorAll('.card-title');
+        for(let product of productEls){
+          product.parentElement.parentElement.style.display='block';
+        }
+      })
 
       function handleBtn1Click (e) {
         let product = {
