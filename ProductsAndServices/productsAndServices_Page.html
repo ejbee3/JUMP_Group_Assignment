@@ -52,7 +52,7 @@
           </li>
           <!-- About Us -->
           <li class="nav-item">
-            <a class="nav-link" href="./About_Us.html">About Us</a>
+            <a class="nav-link" href="../About_Us.html">About Us</a>
           </li>
           <!-- Products & Sevices -->
           <li class="nav-item">
@@ -212,7 +212,7 @@
       product3Button.addEventListener('click', handleBtn3Click)
       product4Button.addEventListener('click', handleBtn4Click)
       product5Button.addEventListener('click', handleBtn5Click)
-      searchForm.addEventListener('submit', e => {
+      searchForm.addEventListener('submit', (e) => {
         e.preventDefault()
         const currentInput = searchTerm.value.toLowerCase()
         for (let product of productsEls) {
@@ -221,21 +221,21 @@
           }
         }
       })
-      searchTerm.addEventListener('click',()=>{
-        searchTerm.value="";
-        const productEls = document.querySelectorAll('.card-title');
-        for(let product of productEls){
-          product.parentElement.parentElement.style.display='block';
+      searchTerm.addEventListener('click', () => {
+        searchTerm.value = ''
+        const productEls = document.querySelectorAll('.card-title')
+        for (let product of productEls) {
+          product.parentElement.parentElement.style.display = 'block'
         }
       })
 
-      function handleBtn1Click (e) {
+      function handleBtn1Click(e) {
         let product = {
           id: Date.now(),
           name: document.getElementById('name1').textContent,
           description: document.getElementById('desc1').textContent,
           price: document.getElementById('price1').textContent,
-          image: document.getElementById('img1').src
+          image: document.getElementById('img1').src,
         }
         cart.push(product)
 
@@ -244,13 +244,13 @@
         writeCartItem(product)
       }
 
-      function handleBtn2Click (e) {
+      function handleBtn2Click(e) {
         let product = {
           id: Date.now(),
           name: document.getElementById('name2').textContent,
           description: document.getElementById('desc2').textContent,
           price: document.getElementById('price2').textContent,
-          image: document.getElementById('img2').src
+          image: document.getElementById('img2').src,
         }
 
         cart.push(product)
@@ -259,13 +259,13 @@
         writeCartItem(product)
       }
 
-      function handleBtn3Click (e) {
+      function handleBtn3Click(e) {
         let product = {
           id: Date.now(),
           name: document.getElementById('name3').textContent,
           description: document.getElementById('desc3').textContent,
           price: document.getElementById('price3').textContent,
-          image: document.getElementById('img3').src
+          image: document.getElementById('img3').src,
         }
 
         cart.push(product)
@@ -274,13 +274,13 @@
         writeCartItem(product)
       }
 
-      function handleBtn4Click (e) {
+      function handleBtn4Click(e) {
         let product = {
           id: Date.now(),
           name: document.getElementById('name4').textContent,
           description: document.getElementById('desc4').textContent,
           price: document.getElementById('price4').textContent,
-          image: document.getElementById('img4').src
+          image: document.getElementById('img4').src,
         }
 
         cart.push(product)
@@ -289,13 +289,13 @@
         writeCartItem(product)
       }
 
-      function handleBtn5Click (e) {
+      function handleBtn5Click(e) {
         let product = {
           id: Date.now(),
           name: document.getElementById('name5').textContent,
           description: document.getElementById('desc5').textContent,
           price: document.getElementById('price5').textContent,
-          image: document.getElementById('img5').src
+          image: document.getElementById('img5').src,
         }
 
         cart.push(product)
@@ -304,7 +304,7 @@
         getTotalPrice(product)
       }
 
-      function writeCartItem (user) {
+      function writeCartItem(user) {
         let cartList = document.getElementById('cart-list')
         let li = document.createElement('li')
         li.innerHTML = `<h6>Product: ${user.name}</h6><p>Description: ${user.description}</p><img src=${user.image} class="cart-image" /><p>Price: ${user.price}</p>`
