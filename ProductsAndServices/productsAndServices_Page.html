@@ -30,7 +30,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">
-        <img src="../image/image.png" alt="Logo" height="100px" />
+        <img src="../image/image.png" alt="Logo" height="50px" />
       </a>
       <button
         class="navbar-toggler"
@@ -52,7 +52,7 @@
           </li>
           <!-- About Us -->
           <li class="nav-item">
-            <a class="nav-link" href="../AboutUsPage/About_Us.html">About Us</a>
+            <a class="nav-link" href="./About_Us.html">About Us</a>
           </li>
           <!-- Products & Sevices -->
           <li class="nav-item">
@@ -216,6 +216,13 @@
           if (!product.innerHTML.toLowerCase().includes(currentInput)) {
             product.parentElement.parentElement.style.display = 'none'
           }
+        }
+      })
+      searchTerm.addEventListener('click',()=>{
+        searchTerm.value="";
+        const productEls = document.querySelectorAll('.card-title');
+        for(let product of productEls){
+          product.parentElement.parentElement.style.display='block';
         }
       })
 
