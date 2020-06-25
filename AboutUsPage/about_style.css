@@ -33,7 +33,7 @@
     color: #fff;
     text-align: center;
     position: relative;
-    font-size: 17px;
+    font-size: 20px;
     background: rgba(0, 0, 0, 0.6);
     -webkit-transform: translatey(-100px);
     -ms-transform: translatey(-100px);
@@ -83,7 +83,41 @@
     transform: translatey(0);
 }
 
-.hovereffect:hover a.info {
+/* .hovereffect:hover a.info {
     -webkit-transition-delay: .2s;
     transition-delay: .2s;
+} */
+
+/* .hovereffect .hovering-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+} */
+
+.hovereffect .hovering-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.hovereffect:hover .hovering-text {
+    visibility: visible;
+    opacity: 1;
+    color: white;
 }
