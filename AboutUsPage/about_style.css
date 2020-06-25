@@ -3,6 +3,41 @@
     position: relative;
 }
 
+.description-products {
+    margin: 50px;
+}
+.description-products .jazz-color{
+    color: cyan;
+    font-weight: bold;
+}
+.years-service {
+    font-weight: bold;
+}
+.description-products .dr-dre{
+    color: red;
+    font-weight: bold;
+}
+.description-products .sennheiser{
+    color: goldenrod;
+    font-weight: bold;
+}
+.description-products .sony{
+    color: blue;
+    font-weight: bold;
+}
+.description-products .corsair{
+    color: green;
+    font-weight: bold;
+}
+.description-products .samsung{
+    color: violet;
+    font-weight: bold;
+}
+.you {
+    color: cyan;
+    font-weight: bold;
+}
+
 .hovereffect {
     /* width: 100%;
     height: 100%; */
@@ -86,6 +121,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 50%;
+    color: cyan;
 }
 
 /* .permanent-overlay:hover {
