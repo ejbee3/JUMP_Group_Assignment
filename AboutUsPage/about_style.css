@@ -1,8 +1,4 @@
-.fix-image-sizing .img {
-    height: 300px;
-    position: relative;
-}
-
+/* Description of the about us page */
 .description-products {
     margin: 50px;
 }
@@ -38,6 +34,13 @@
     font-weight: bold;
 }
 
+/* Size of all images */
+.fix-image-sizing .img {
+    height: 300px;
+    position: relative;
+}
+
+
 .hovereffect {
     /* width: 100%;
     height: 100%; */
@@ -46,6 +49,7 @@
     position: relative;
     text-align: center;
     cursor: default;
+    margin: 100px;
 }
 
 .hovereffect .overlay {
@@ -98,9 +102,9 @@
     padding: 7px 14px;
 } */
 
-.hovereffect a.info:hover {
+/* .hovereffect a.info:hover {
     box-shadow: 0 0 5px #fff;
-}
+} */
 
 .hovereffect:hover img {
     -ms-transform: scale(1.2);
@@ -115,7 +119,7 @@
 }
 
 /* -------------------------------------------- */
-.permanent-overlay {
+.container-all-image .permanent-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -124,9 +128,9 @@
     color: cyan;
 }
 
-/* .permanent-overlay:hover {
+.container-all-image .hovereffect:hover .permanent-overlay {
     visibility: hidden;
-} */
+}
 
 .hovereffect:hover h2,
 .hovereffect:hover a.info 
