@@ -74,6 +74,14 @@
     filter: alpha(opacity=100);
 }
 
+/* -------------------------------------------- */
+.permanent-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .hovereffect:hover h2,
 .hovereffect:hover a.info {
     opacity: 1;
