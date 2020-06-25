@@ -52,7 +52,7 @@
           </li>
           <!-- About Us -->
           <li class="nav-item">
-            <a class="nav-link" href="./About_Us.html">About Us</a>
+            <a class="nav-link" href="../About_Us.html">About Us</a>
           </li>
           <!-- Products & Sevices -->
           <li class="nav-item">
@@ -82,7 +82,7 @@
       </div>
     </nav>
     <main>
-      <section>
+      <section id="">
         <h4>List of Products:</h4>
         <div class="card" style="width: 18rem;">
           <img
@@ -192,17 +192,20 @@
       </div>
     </main>
     <script>
+      const searchForm = document.getElementById('search-form')
+      const searchTerm = document.getElementById('search-term')
+      const cards = document.getElementById('cards')
       const product1Button = document.getElementById('btn1')
       const product2Button = document.getElementById('btn2')
       const product3Button = document.getElementById('btn3')
       const product4Button = document.getElementById('btn4')
       const product5Button = document.getElementById('btn5')
+      const item4 = document.getElementById('name4')
+      console.log(item4.parentElement.parentElement)
 
       let cart = []
       let priceTotal = 0
       const productsEls = document.querySelectorAll('.card-title')
-      const searchForm = document.getElementById('search-form')
-      let searchTerm = document.getElementById('search-term')
 
       product1Button.addEventListener('click', handleBtn1Click)
       product2Button.addEventListener('click', handleBtn2Click)
@@ -218,11 +221,11 @@
           }
         }
       })
-      searchTerm.addEventListener('click',()=>{
-        searchTerm.value="";
-        const productEls = document.querySelectorAll('.card-title');
-        for(let product of productEls){
-          product.parentElement.parentElement.style.display='block';
+      searchTerm.addEventListener('click', () => {
+        searchTerm.value = ''
+        const productEls = document.querySelectorAll('.card-title')
+        for (let product of productEls) {
+          product.parentElement.parentElement.style.display = 'block'
         }
       })
 
@@ -297,8 +300,8 @@
 
         cart.push(product)
         console.warn('added', { cart })
-        getTotalPrice(product)
         writeCartItem(product)
+        getTotalPrice(product)
       }
 
       function writeCartItem(user) {
@@ -308,14 +311,18 @@
         cartList.appendChild(li)
         let remove = document.createElement('button')
         remove.innerHTML = 'Remove'
-        remove.addEventListener('click', () => cartList.removeChild(li))
+        remove.addEventListener('click', () => {
+          cartList.removeChild(li)
+          priceTotal -= parseFloat(user.price.slice(1))
+          document.getElementById(
+            'price-total'
+          ).textContent = `Total Price: ${'$'.concat(priceTotal.toString())}`
+        })
         li.append(remove)
       }
 
       function getTotalPrice(product) {
-        let priceOfItem = product.price.slice(1)
-        let numPrice = parseFloat(priceOfItem)
-        console.log(typeof numPrice)
+        let numPrice = parseFloat(product.price.slice(1))
         priceTotal += numPrice
         console.log(priceTotal)
         document.getElementById(
@@ -323,5 +330,20 @@
         ).textContent = `Total Price: ${'$'.concat(priceTotal.toString())}`
       }
     </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
