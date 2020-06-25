@@ -169,6 +169,7 @@
       <div>
         <h4>Cart:</h4>
         <ul id="cart-list"></ul>
+        <p id="price-total"></p>
       </div>
     </main>
     <script>
@@ -179,6 +180,7 @@
       const product5Button = document.getElementById('btn5')
 
       let cart = []
+      let priceTotal = 0
 
       product1Button.addEventListener('click', handleBtn1Click)
       product2Button.addEventListener('click', handleBtn2Click)
@@ -197,6 +199,7 @@
         cart.push(product)
 
         console.warn('added', { cart })
+        getTotalPrice(product)
         writeCartItem(product)
       }
 
@@ -208,9 +211,10 @@
           price: document.getElementById('price2').textContent,
           image: document.getElementById('img2').src,
         }
-        cart.push(product)
 
+        cart.push(product)
         console.warn('added', { cart })
+        getTotalPrice(product)
         writeCartItem(product)
       }
 
@@ -222,9 +226,10 @@
           price: document.getElementById('price3').textContent,
           image: document.getElementById('img3').src,
         }
-        cart.push(product)
 
+        cart.push(product)
         console.warn('added', { cart })
+        getTotalPrice(product)
         writeCartItem(product)
       }
 
@@ -236,9 +241,10 @@
           price: document.getElementById('price4').textContent,
           image: document.getElementById('img4').src,
         }
-        cart.push(product)
 
+        cart.push(product)
         console.warn('added', { cart })
+        getTotalPrice(product)
         writeCartItem(product)
       }
 
@@ -250,12 +256,10 @@
           price: document.getElementById('price5').textContent,
           image: document.getElementById('img5').src,
         }
-        cart.push(product)
-        let priceOfItem = product.price.slice(1)
-        parseFloat(priceOfItem)
-        console.log(priceOfItem)
 
+        cart.push(product)
         console.warn('added', { cart })
+        getTotalPrice(product)
         writeCartItem(product)
       }
 
@@ -270,7 +274,17 @@
         li.append(remove)
       }
 
-      // function getTotalPrice(price)
+      function getTotalPrice(product) {
+        let priceOfItem = product.price.slice(1)
+        parseFloat(priceOfItem)
+        priceTotal += priceOfItem
+        console.log(priceTotal)
+        document.getElementById(
+          'price-total'
+        ).textContent = `Total Price: ${'$'.concat(
+          priceTotal.toString().slice(1)
+        )}`
+      }
     </script>
   </body>
 </html>
