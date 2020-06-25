@@ -30,7 +30,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">
-        <img src="../image/image.png" alt="Logo" height="100px" />
+        <img src="../image/image.png" alt="Logo" height="50px" />
       </a>
       <button
         class="navbar-toggler"
@@ -52,7 +52,7 @@
           </li>
           <!-- About Us -->
           <li class="nav-item">
-            <a class="nav-link" href="../AboutUsPage/About_Us.html">About Us</a>
+            <a class="nav-link" href="./About_Us.html">About Us</a>
           </li>
           <!-- Products & Sevices -->
           <li class="nav-item">
@@ -300,8 +300,8 @@
 
         cart.push(product)
         console.warn('added', { cart })
-        getTotalPrice(product)
         writeCartItem(product)
+        getTotalPrice(product)
       }
 
       function writeCartItem (user) {
@@ -311,26 +311,18 @@
         cartList.appendChild(li)
         let remove = document.createElement('button')
         remove.innerHTML = 'Remove'
-        remove.addEventListener('click', () => cartList.removeChild(li))
+        remove.addEventListener('click', () => {
+          cartList.removeChild(li)
+          priceTotal -= parseFloat(user.price.slice(1))
+          document.getElementById(
+            'price-total'
+          ).textContent = `Total Price: ${'$'.concat(priceTotal.toString())}`
+        })
         li.append(remove)
       }
 
-      searchForm.addEventListener('submit', e => {
-        e.preventDefault()
-        const currentInput = searchTerm.value.toLowerCase()
-
-        for (let product of productsEls) {
-          if (!product.innerHTML.toLowerCase().includes(currentInput)) {
-            product.parentElement.parentElement.style.display = 'none'
-          }
-        }
-      })
-
-      // function getTotalPrice(price)
-      function getTotalPrice (product) {
-        let priceOfItem = product.price.slice(1)
-        let numPrice = parseFloat(priceOfItem)
-        console.log(typeof numPrice)
+      function getTotalPrice(product) {
+        let numPrice = parseFloat(product.price.slice(1))
         priceTotal += numPrice
         console.log(priceTotal)
         document.getElementById(
