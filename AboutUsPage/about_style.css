@@ -3,6 +3,25 @@
     position: relative;
 }
 
+.description-products {
+    margin: 50px;
+}
+.description-products .dr-dre{
+    color: red;
+}
+.description-products .sennheiser{
+    color: goldenrod;
+}
+.description-products .sony{
+    color: blue;
+}
+.description-products .corsair{
+    color: green;
+}
+.description-products .samsung{
+    color: violet;
+}
+
 .hovereffect {
     /* width: 100%;
     height: 100%; */
@@ -86,6 +105,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 50%;
+    color: cyan;
 }
 
 /* .permanent-overlay:hover {
