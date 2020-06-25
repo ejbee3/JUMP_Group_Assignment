@@ -350,22 +350,23 @@
       function writeCartItem(user) {
         let cartList = document.getElementById('cart-list')
         let li = document.createElement('li')
-        li.innerHTML = `<h6>Product: ${user.name}</h6><p>Description: ${user.description}</p><img src=${user.image} class="cart-image" /><p>Price: ${user.price}</p>`
+        li.innerHTML = `<h6>Product: ${user.name}</h6><p>Description: ${user.description}</p><img src=${user.image} class="cart-image" />`
         cartList.appendChild(li)
         let remove = document.createElement('button')
         remove.innerHTML = 'Remove'
         remove.addEventListener('click', () => {
           cartList.removeChild(li)
-          priceTotal -= parseFloat(user.price.slice(1)).toFixed(2)
+          priceTotal -= parseFloat(user.price.slice(1))
           document.getElementById(
             'price-total'
-          ).textContent = `Total Price: ${'$'.concat(priceTotal.toString())}`
+          ).textContent = `Total Price: ${'$'.concat(priceTotal.toFixed(2).toString())}`
         })
         li.append(remove)
       }
 
       function getTotalPrice(product) {
         let numPrice = parseFloat(product.price.slice(1))
+        console.log(numPrice)
         priceTotal += numPrice
         console.log(priceTotal)
         document.getElementById(
