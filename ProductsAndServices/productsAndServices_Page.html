@@ -250,13 +250,10 @@
       const product3Button = document.getElementById('btn3')
       const product4Button = document.getElementById('btn4')
       const product5Button = document.getElementById('btn5')
-      const item4 = document.getElementById('name4')
-      console.log(item4.parentElement.parentElement)
-
+      const productsEls = document.querySelectorAll('.card-title')
+      
       let cart = []
       let priceTotal = 0
-      let numOfItems = 0
-      const productsEls = document.querySelectorAll('.card-title')
 
       product1Button.addEventListener('click', handleBtn1Click)
       product2Button.addEventListener('click', handleBtn2Click)
@@ -398,7 +395,10 @@
         if (cart.length === 0) {
           priceTotal = 0
         } else {
-          priceTotal -= parseFloat(product.price.slice(1))
+          let numPrice = Number(product.price.slice(1)) * 100
+          priceTotal = priceTotal * 100
+          priceTotal -= numPrice
+          priceTotal = priceTotal / 100
           document.getElementById(
             'price-total'
           ).textContent = `Total Price: ${'$'.concat(priceTotal.toFixed(2).toString())}`
